@@ -6,7 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:crud_lista_compras/my_app.dart';
-import 'package:crud_lista_compras/src/provider/users.dart';
+import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
@@ -15,8 +15,8 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(
-      ChangeNotifierProvider<Users>(
-        create: (_) => Users(),
+      ChangeNotifierProvider<ItemsProvider>(
+        create: (_) => ItemsProvider(),
         child: const MyApp(),
       ),
     );

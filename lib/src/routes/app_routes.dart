@@ -1,4 +1,4 @@
 class AppRoutes {
   static const home = '/';
-  static const userForm = '/user_form';
+  static const itemForm = '/item_form';
 }

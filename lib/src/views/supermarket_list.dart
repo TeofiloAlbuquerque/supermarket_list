@@ -9,14 +9,14 @@ class SupermarketList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ItemsProvider users = Provider.of(context);
+    final ItemsProvider items = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de compras'),
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(AppRoutes.userForm);
+              Navigator.of(context).pushNamed(AppRoutes.itemForm);
             },
             icon: const Icon(Icons.add),
           ),
@@ -25,11 +25,11 @@ class SupermarketList extends StatelessWidget {
       body: ListView.builder(
         // Quantidade de itens que temos para mostrar na lista, que irá carregar
         // apenas o itens que aparecem na tela.
-        itemCount: users.count,
+        itemCount: items.count,
         // criar um componente
         itemBuilder: (_, index) => ItemTile(
           // Irá pegar elementos a partir dos indices do Map "users"
-          users.byIndex(index),
+          items.byIndex(index),
         ),
       ),
     );

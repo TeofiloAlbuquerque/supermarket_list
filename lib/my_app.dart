@@ -1,7 +1,7 @@
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:crud_lista_compras/src/routes/app_routes.dart';
+import 'package:crud_lista_compras/src/views/item_form.dart';
 import 'package:crud_lista_compras/src/views/supermarket_list.dart';
-import 'package:crud_lista_compras/src/views/list_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           AppRoutes.home: (_) => const SupermarketList(),
-          AppRoutes.userForm: (_) => const ItemForm(),
+          AppRoutes.itemForm: (_) => const ItemForm(),
         },
       ),
     );

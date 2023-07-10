@@ -1,18 +1,18 @@
 import 'dart:math';
-import 'package:crud_lista_compras/src/data/dummy_users.dart';
-import 'package:crud_lista_compras/src/models/user.dart';
+import 'package:crud_lista_compras/src/data/dummy_items.dart';
+import 'package:crud_lista_compras/src/models/item.dart';
 import 'package:flutter/material.dart';
 
 // Pesquisar sobre o padrão OBSERVER (Importante)
 // Iremos utilizar o Provider para controlar o map de Itens
 // "with", Mixin
 class ItemsProvider with ChangeNotifier {
-  final Map<String, User> _items = {...dummyUsers};
+  final Map<String, Item> _items = {...dummyItems};
   // get para retornar todos os Usuarios da lista
-  List<User> get all {
-    // Sempre retornarmos um clone da lista para evitarmos retornar uma referencia
-    // para o map, pois assim qualquer parte da aplicação poderia alterar o map
-    // sem que a classe seja notificada.
+  List<Item> get all {
+    // Sempre retornarmos um clone da lista para evitarmos retornar uma
+    // referencia para o map, pois assim qualquer parte da aplicação poderia
+    // alterar o map sem que a classe seja notificada.
     return [..._items.values];
   }
 
@@ -23,26 +23,27 @@ class ItemsProvider with ChangeNotifier {
 
   // Ter acesso a um indice na lista sem precisar acessar ao get "all" e ter que
   // toda vez clonar a lista.
-  User byIndex(int index) {
+  Item byIndex(int index) {
     return _items.values.elementAt(index);
   }
 
-  void put(User user) {
-    // if (user == null) {
-    //   return;
-    // }
+  void put(Item item) {
     // Teste para saber se vamos Adicionar ou Alterar
-    // Se conter o "user.id" irá fazer uma Alteração
+    // Se conter o "item.id" irá fazer uma Alteração
     // metodo "trim()" remover os espaços em branco
-    if (user.id.trim().isNotEmpty && _items.containsKey(user.id)) {
+    if (item.id.trim().isNotEmpty == true && _items.containsKey(item.id)) {
       // Alterar
       _items.update(
-        user.id,
-        (existingUser) => User(
-          id: existingUser.id,
-          name: user.name,
-          email: user.email,
-          avatarUrl: user.avatarUrl,
+        item.id,
+        (existingitem) => Item(
+          id: existingitem.id,
+          name: item.name,
+          amout: item.amout,
+          unit: item.unit,
+          price: item.price,
+          category: item.category,
+         // observation: item.observation,
+          imageUrl: item.imageUrl,
         ),
       );
     } else {
@@ -54,14 +55,18 @@ class ItemsProvider with ChangeNotifier {
       // no mapa. Recebe 2 parametros, a chave que se deseja adicionar no mapa e
       // ifAbsent, uma função sem parametros que é chamada para fornecer o valor
       // a se associado a chave
-      // Inserir de forma fixa um User
+      // Inserir de forma fixa um item
       _items.putIfAbsent(
         id,
-        () => User(
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          avatarUrl: user.avatarUrl,
+        () => Item(
+          id: item.id,
+          name: item.name,
+          amout: item.amout,
+          unit: item.unit,
+          price: item.price,
+          category: item.category,
+        //  observation: item.observation,
+          imageUrl: item.imageUrl,
         ),
       );
     }
@@ -71,8 +76,8 @@ class ItemsProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void remove(User user) {
-    _items.remove(user.id);
+  void remove(Item item) {
+    _items.remove(item.id);
     notifyListeners();
   }
 }

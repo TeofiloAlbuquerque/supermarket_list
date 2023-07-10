@@ -1,28 +1,28 @@
-import 'package:crud_lista_compras/src/models/user.dart';
+import 'package:crud_lista_compras/src/models/item.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:crud_lista_compras/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ItemTile extends StatelessWidget {
-  final User user;
+  final Item item;
   // Porr ter apenas parametros finais, o construtor pode ser Const
-  const ItemTile(this.user, {Key? key}) : super(key: key);
+  const ItemTile(this.item, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // Se não for inserido uma imageUrl, irá colocar por padrão, um icone personalizado
-    final avatar = user.avatarUrl.isEmpty
+    final avatar = item.imageUrl.isEmpty
         ? const CircleAvatar(
             child: Icon(Icons.person),
           )
         : CircleAvatar(
-            backgroundImage: NetworkImage(user.avatarUrl),
+            backgroundImage: NetworkImage(item.imageUrl),
           );
     return ListTile(
       leading: avatar,
-      title: Text(user.name),
-      subtitle: Text(user.email),
+      title: Text(item.name),
+      subtitle: Text('${item.amout} ${item.unit} = ${item.price}'),
       trailing: SizedBox(
         width: 100,
         child: Row(children: [
@@ -31,9 +31,9 @@ class ItemTile extends StatelessWidget {
             color: Colors.amber,
             onPressed: () {
               Navigator.of(context).pushNamed(
-                AppRoutes.userForm,
+                AppRoutes.itemForm,
                 // Irá passar o "user" como parametro na navegação
-                arguments: user,
+                arguments: item,
               );
             },
           ),
@@ -44,7 +44,7 @@ class ItemTile extends StatelessWidget {
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  title: const Text('Excluir Usuário'),
+                  title: const Text('Excluir Item'),
                   content: const Text('Tem certeza?'),
                   actions: <Widget>[
                     TextButton(
@@ -57,11 +57,11 @@ class ItemTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Como o "ShowDialog" espera um Future, podemos usar o metodo 
+                // Como o "ShowDialog" espera um Future, podemos usar o metodo
                 // "then" e definir uma condição, de que o provider só irá
                 // remover se a condição for realizada
               ).then((confirmed) {
-                Provider.of<ItemsProvider>(context, listen: false).remove(user);
+                Provider.of<ItemsProvider>(context, listen: false).remove(item);
               });
             },
           )
