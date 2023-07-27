@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:crud_lista_compras/src/data/dummy_items.dart';
 import 'package:crud_lista_compras/src/models/item.dart';
 import 'package:flutter/material.dart';
@@ -42,14 +41,15 @@ class ItemsProvider with ChangeNotifier {
           unit: item.unit,
           price: item.price,
           category: item.category,
-         // observation: item.observation,
+          // observation: item.observation,
           imageUrl: item.imageUrl,
         ),
       );
     } else {
       // Adicionar
       // Quando o usuario não tiver uma ID, significa que ele é um novo elemento
-      final id = Random().nextDouble().toString();
+      int timestamp = DateTime.now().millisecondsSinceEpoch;
+      final id = timestamp.toString();
       // "putIfAbsent" é um metodo da clase Map que permite adicionar um par de
       // chave/valor a um mapa somente se a chave especificada ainda não estiver
       // no mapa. Recebe 2 parametros, a chave que se deseja adicionar no mapa e
@@ -59,13 +59,13 @@ class ItemsProvider with ChangeNotifier {
       _items.putIfAbsent(
         id,
         () => Item(
-          id: item.id,
+          id: id,
           name: item.name,
           amout: item.amout,
           unit: item.unit,
           price: item.price,
           category: item.category,
-        //  observation: item.observation,
+          //  observation: item.observation,
           imageUrl: item.imageUrl,
         ),
       );

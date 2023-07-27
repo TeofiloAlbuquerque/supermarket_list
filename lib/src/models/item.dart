@@ -1,24 +1,23 @@
-
-enum Units {
-  un,
-  dz,
-  ml,
-  L,
-  kg,
-  g,
-  caixa,
-  embalagem,
-  galao,
-  garrafa,
-  lata,
-  pacote,
-}
+// enum Units {
+//   un,
+//   dz,
+//   ml,
+//   L,
+//   kg,
+//   g,
+//   caixa,
+//   embalagem,
+//   galao,
+//   garrafa,
+//   lata,
+//   pacote,
+// }
 
 class Item {
   final String id;
   final String name;
   final int amout; // quantidade
-  final Units unit;
+  final String unit;
   final double price;
   final String category;
   //final bool addCart;
