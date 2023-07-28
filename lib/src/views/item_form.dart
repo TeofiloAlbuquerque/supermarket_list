@@ -52,7 +52,7 @@ class _ItemFormState extends State<ItemForm> {
   void _loadFormData(Item item) {
     _formData['id'] = item.id;
     _formData['name'] = item.name;
-    _formData['amout'] = item.amout.toString();
+    _formData['amout'] = item.quantity.toString();
     _formData['unit'] = item.unit.toString();
     _formData['price'] = item.price.toString();
     _formData['category'] = item.category;
@@ -104,7 +104,7 @@ class _ItemFormState extends State<ItemForm> {
                   Item(
                     id: _formData['id'] ?? '',
                     name: _formData['name'] ?? '',
-                    amout: int.parse(_formData['amout'] ?? '0'),
+                    quantity: int.parse(_formData['amout'] ?? '0'),
                     unit: _formData['unit'] ?? 'un',
                     price: double.parse(_formData['price'] ?? '0.0'),
                     category: _formData['category'] ?? '',

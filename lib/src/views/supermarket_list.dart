@@ -1,6 +1,6 @@
 import 'package:crud_lista_compras/src/components/item_tile.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
-import 'package:crud_lista_compras/src/routes/app_routes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,16 +15,11 @@ class SupermarketList extends StatelessWidget {
         title: const Text('Minhas listas'),
         actions: [
           IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(
-                AppRoutes.itemForm,
-              );
-            },
+            onPressed: () {},
             icon: const Icon(Icons.add),
           ),
         ],
       ),
-      drawer: const Drawer(),
       body: Column(
         children: [
           Expanded(

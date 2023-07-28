@@ -12,9 +12,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<CardModel> cardList = [
-    CardModel(titleCard: 'Julho', amount: 6, progressPercentage: 1),
-    CardModel(titleCard: 'Agosto', amount: 10, progressPercentage: 5),
-    CardModel(titleCard: 'Setembro', amount: 3, progressPercentage: 1),
+    CardModel(titleCard: 'Julho', quantityProducts: 6, priceProductList: 95.55),
+    CardModel(
+        titleCard: 'Agosto', quantityProducts: 10, priceProductList: 126.83),
+    CardModel(
+        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,19 +34,49 @@ class _HomePageState extends State<HomePage> {
         //   ),
         // ],
       ),
-      body: ListView.builder(
-        itemCount: cardList.length,
-        itemBuilder: (_, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
+      drawer: const Drawer(),
+      // NavigationDrawer(
+      //   children: [],
+      // ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: ListView.builder(
+              itemCount: cardList.length,
+              itemBuilder: (_, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 3,
+                  ),
+                  child: CustomCard(
+                    cardData: cardList[index],
+                  ),
+                );
+              },
             ),
-            child: CustomCard(
-              cardData: cardList[index],
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.newList,
+                  );
+                },
+                icon: const Icon(Icons.add),
+                label: const Text('Nova lista'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
             ),
-          );
-        },
+          )
+        ],
       ),
     );
   }

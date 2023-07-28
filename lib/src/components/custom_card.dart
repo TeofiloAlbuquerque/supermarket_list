@@ -1,4 +1,5 @@
 import 'package:crud_lista_compras/src/models/card_model.dart';
+import 'package:crud_lista_compras/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -7,18 +8,31 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4.0,
-      child: ListTile(
-        title: Text(cardData.titleCard),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text('${cardData.amount}'),
-            LinearProgressIndicator(
-              value: cardData.progressPercentage,
-            )
-          ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          AppRoutes.supermarketList,
+        );
+      },
+      child: Card(
+        elevation: 4.0,
+        child: ListTile(
+          title: Text(cardData.titleCard),
+          subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text('Total: R\$ ${cardData.priceProductList}'),
+              Text('${cardData.quantityProducts}/${cardData.quantityProducts}'),
+              // LinearProgressIndicator(
+              //   value: cardData.progressPercentage,
+              // )
+            ],
+          ),
+          trailing: IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
         ),
       ),
     );

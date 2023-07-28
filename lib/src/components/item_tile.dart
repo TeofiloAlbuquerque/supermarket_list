@@ -22,7 +22,7 @@ class ItemTile extends StatelessWidget {
     return ListTile(
       leading: avatar,
       title: Text(item.name),
-      subtitle: Text('${item.amout} ${item.unit} = ${item.price}'),
+      subtitle: Text('${item.quantity} ${item.unit} = ${item.price}'),
       trailing: SizedBox(
         width: 100,
         child: Row(children: [

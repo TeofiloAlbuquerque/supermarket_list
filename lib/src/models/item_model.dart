@@ -1,22 +1,7 @@
-// enum Units {
-//   un,
-//   dz,
-//   ml,
-//   L,
-//   kg,
-//   g,
-//   caixa,
-//   embalagem,
-//   galao,
-//   garrafa,
-//   lata,
-//   pacote,
-// }
-
 class Item {
   final String id;
   final String name;
-  final int amout; // quantidade
+  final int quantity;
   final String unit;
   final double price;
   final String category;
@@ -27,7 +12,7 @@ class Item {
   const Item({
     required this.id,
     required this.name,
-    required this.amout,
+    required this.quantity,
     required this.unit,
     required this.price,
     required this.category,

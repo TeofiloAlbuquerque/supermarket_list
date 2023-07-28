@@ -2,6 +2,7 @@ import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:crud_lista_compras/src/routes/app_routes.dart';
 import 'package:crud_lista_compras/src/views/home_page.dart';
 import 'package:crud_lista_compras/src/views/item_form.dart';
+import 'package:crud_lista_compras/src/views/new_list.dart';
 import 'package:crud_lista_compras/src/views/supermarket_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,14 +28,16 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Lista de compras',
         theme: ThemeData(
+          //useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.lightBlue,
           ),
         ),
         routes: {
           AppRoutes.home: (_) => const HomePage(),
-          AppRoutes.supermarketList: (_) => const SupermarketList(),
+          AppRoutes.newList: (_) => const NewList(),
           AppRoutes.itemForm: (_) => const ItemForm(),
+          AppRoutes.supermarketList: (_) => const SupermarketList(),
         },
       ),
     );

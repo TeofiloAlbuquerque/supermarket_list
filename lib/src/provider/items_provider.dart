@@ -37,7 +37,7 @@ class ItemsProvider with ChangeNotifier {
         (existingitem) => Item(
           id: existingitem.id,
           name: item.name,
-          amout: item.amout,
+          quantity: item.quantity,
           unit: item.unit,
           price: item.price,
           category: item.category,
@@ -61,7 +61,7 @@ class ItemsProvider with ChangeNotifier {
         () => Item(
           id: id,
           name: item.name,
-          amout: item.amout,
+          quantity: item.quantity,
           unit: item.unit,
           price: item.price,
           category: item.category,
