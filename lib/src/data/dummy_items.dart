@@ -1,4 +1,4 @@
-import 'package:crud_lista_compras/src/models/item.dart';
+import 'package:crud_lista_compras/src/models/item_model.dart';
 
 // Dados mockados
 const dummyItems = {

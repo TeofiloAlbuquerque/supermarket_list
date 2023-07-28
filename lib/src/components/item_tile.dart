@@ -1,4 +1,4 @@
-import 'package:crud_lista_compras/src/models/item.dart';
+import 'package:crud_lista_compras/src/models/item_model.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:crud_lista_compras/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';

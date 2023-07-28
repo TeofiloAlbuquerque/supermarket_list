@@ -1,5 +1,5 @@
 import 'package:crud_lista_compras/src/data/dummy_items.dart';
-import 'package:crud_lista_compras/src/models/item.dart';
+import 'package:crud_lista_compras/src/models/item_model.dart';
 import 'package:flutter/material.dart';
 
 // Pesquisar sobre o padrão OBSERVER (Importante)
