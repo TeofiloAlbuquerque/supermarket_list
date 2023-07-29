@@ -1,10 +1,10 @@
-import 'package:crud_lista_compras/src/design_system/components/custom_dropdownbutton.dart';
-import 'package:crud_lista_compras/src/models/item_model.dart';
-import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../design_system/components/custom_dropdownbutton.dart';
+import '../models/item_model.dart';
+import '../provider/items_provider.dart';
 import '../routes/app_routes.dart';
 
 class ItemFormView extends StatefulWidget {

@@ -1,2 +1,2 @@
-# crud_supermarket_list
+# supermarket_list
 Desenvolvimento de um app de lista de supermercado

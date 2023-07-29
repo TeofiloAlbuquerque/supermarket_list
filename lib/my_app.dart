@@ -1,12 +1,13 @@
-import 'package:crud_lista_compras/src/design_system/colors/colors_app.dart';
-import 'package:crud_lista_compras/src/provider/items_provider.dart';
-import 'package:crud_lista_compras/src/routes/app_routes.dart';
-import 'package:crud_lista_compras/src/views/home_view.dart';
-import 'package:crud_lista_compras/src/views/item_form_view.dart';
-import 'package:crud_lista_compras/src/views/new_list_view.dart';
-import 'package:crud_lista_compras/src/views/supermarket_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'src/design_system/colors/colors_app.dart';
+import 'src/provider/items_provider.dart';
+import 'src/routes/app_routes.dart';
+import 'src/views/home_view.dart';
+import 'src/views/item_form_view.dart';
+import 'src/views/new_list_view.dart';
+import 'src/views/supermarket_list_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -30,9 +31,7 @@ class MyApp extends StatelessWidget {
         title: 'Lista de compras',
         theme: ThemeData(
           //useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: ColorsApp.orange,
-          ),
+          primaryColor: ColorsApp.beige,
         ),
         routes: {
           AppRoutes.home: (_) => const HomeView(),

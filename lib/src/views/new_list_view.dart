@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:lista_compras/src/design_system/components/custom_text_field.dart';
 import '../design_system/colors/colors_app.dart';
 import '../routes/app_routes.dart';
 
@@ -16,26 +16,12 @@ class NewListView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              width: 360,
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    borderSide: BorderSide(
-                      color: ColorsApp.grey,
-                    ),
-                  ),
-                  labelText: 'Nova lista',
-                  labelStyle: TextStyle(
-                    color: ColorsApp.grey,
-                  ),
-                  fillColor: ColorsApp.greyLight,
-                  filled: true,
-                ),
-              ),
+            CustomTextField(
+              text: 'Nova lista',
+              colorBorder: ColorsApp.grey,
+              colorLabel: ColorsApp.grey,
+              colorFill: ColorsApp.greyLight,
+              keyboardType: TextInputType.name,
             ),
             const Padding(
               padding: EdgeInsets.only(
@@ -44,6 +30,19 @@ class NewListView extends StatelessWidget {
                 bottom: 10,
               ),
               child: Text('Sugestões'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomTextField(
+              text: 'Limite de gastos (Opcional)',
+              colorBorder: ColorsApp.grey,
+              colorLabel: ColorsApp.grey,
+              colorFill: ColorsApp.greyLight,
+              keyboardType: TextInputType.number,
+            ),
+            const SizedBox(
+              height: 20,
             ),
             SizedBox(
               width: 350,

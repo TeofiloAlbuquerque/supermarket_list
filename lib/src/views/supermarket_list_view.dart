@@ -1,8 +1,8 @@
-import 'package:crud_lista_compras/src/design_system/components/item_tile.dart';
-import 'package:crud_lista_compras/src/provider/items_provider.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../design_system/components/item_tile.dart';
+import '../provider/items_provider.dart';
 
 class SupermarketListView extends StatelessWidget {
   const SupermarketListView({super.key});

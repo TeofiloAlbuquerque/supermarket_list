@@ -1,6 +1,6 @@
-import 'package:crud_lista_compras/src/data/dummy_items.dart';
-import 'package:crud_lista_compras/src/models/item_model.dart';
 import 'package:flutter/material.dart';
+import '../data/dummy_items.dart';
+import '../models/item_model.dart';
 
 // Pesquisar sobre o padrão OBSERVER (Importante)
 // Iremos utilizar o Provider para controlar o map de Itens

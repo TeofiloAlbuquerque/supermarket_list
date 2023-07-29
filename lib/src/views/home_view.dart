@@ -1,8 +1,9 @@
-import 'package:crud_lista_compras/src/design_system/colors/colors_app.dart';
-import 'package:crud_lista_compras/src/design_system/components/custom_card.dart';
-import 'package:crud_lista_compras/src/models/card_model.dart';
-import 'package:crud_lista_compras/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:lista_compras/src/design_system/components/custom_app_bar.dart';
+import '../design_system/colors/colors_app.dart';
+import '../design_system/components/custom_card.dart';
+import '../models/card_model.dart';
+import '../routes/app_routes.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -51,16 +52,20 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsApp.greyLight,
-      appBar: AppBar(
-        title: const Text('Minhas listas'),
+      appBar: CustomAppBar(
+        title: 'Minhas listas',
+        background: ColorsApp.blue,
       ),
+      // appBar: AppBar(
+      //   title: const Text('Minhas listas'),
+      // ),
       drawer: Drawer(
         backgroundColor: Colors.black,
         child: ListView(
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
-                color: ColorsApp.orange,
+                color: ColorsApp.blue,
               ),
               child: const Text('Drawer Header'),
             ),
@@ -100,9 +105,12 @@ class _HomeViewState extends State<HomeView> {
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.only(
+                bottom: 40,
+                right: 25,
+              ),
               child: SizedBox(
-                height: 40,
+                height: 45,
                 child: ElevatedButton.icon(
                   onPressed: () {
                     Navigator.of(context).pushNamed(
