@@ -1,11 +1,11 @@
-import 'package:crud_lista_compras/src/components/item_tile.dart';
+import 'package:crud_lista_compras/src/design_system/components/item_tile.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SupermarketList extends StatelessWidget {
-  const SupermarketList({super.key});
+class SupermarketListView extends StatelessWidget {
+  const SupermarketListView({super.key});
 
   @override
   Widget build(BuildContext context) {

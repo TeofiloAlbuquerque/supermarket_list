@@ -1,18 +1,20 @@
-import 'package:crud_lista_compras/src/components/custom_dropdownbutton.dart';
+import 'package:crud_lista_compras/src/design_system/components/custom_dropdownbutton.dart';
 import 'package:crud_lista_compras/src/models/item_model.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ItemForm extends StatefulWidget {
-  const ItemForm({super.key});
+import '../routes/app_routes.dart';
+
+class ItemFormView extends StatefulWidget {
+  const ItemFormView({super.key});
 
   @override
-  State<ItemForm> createState() => _ItemFormState();
+  State<ItemFormView> createState() => _ItemFormViewState();
 }
 
-class _ItemFormState extends State<ItemForm> {
+class _ItemFormViewState extends State<ItemFormView> {
   final _form = GlobalKey<FormState>();
 
   final Map<String, String> _formData = {};
@@ -112,7 +114,9 @@ class _ItemFormState extends State<ItemForm> {
                     imageUrl: _formData['imageUrl'] ?? '',
                   ),
                 );
-                Navigator.of(context).pop();
+                Navigator.of(context).pushNamed(
+                  AppRoutes.supermarketList,
+                );
               }
             },
             icon: const Icon(Icons.save),

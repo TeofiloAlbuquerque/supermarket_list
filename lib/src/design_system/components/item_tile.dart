@@ -11,7 +11,8 @@ class ItemTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Se não for inserido uma imageUrl, irá colocar por padrão, um icone personalizado
+    // Se não for inserido uma imageUrl, irá colocar por padrão, um icone
+    // personalizado
     final avatar = item.imageUrl.isEmpty
         ? const CircleAvatar(
             child: Icon(Icons.person),
@@ -61,7 +62,10 @@ class ItemTile extends StatelessWidget {
                 // "then" e definir uma condição, de que o provider só irá
                 // remover se a condição for realizada
               ).then((confirmed) {
-                Provider.of<ItemsProvider>(context, listen: false).remove(item);
+                Provider.of<ItemsProvider>(
+                  context,
+                  listen: false,
+                ).remove(item);
               });
             },
           )

@@ -1,9 +1,10 @@
+import 'package:crud_lista_compras/src/design_system/colors/colors_app.dart';
 import 'package:crud_lista_compras/src/provider/items_provider.dart';
 import 'package:crud_lista_compras/src/routes/app_routes.dart';
-import 'package:crud_lista_compras/src/views/home_page.dart';
-import 'package:crud_lista_compras/src/views/item_form.dart';
-import 'package:crud_lista_compras/src/views/new_list.dart';
-import 'package:crud_lista_compras/src/views/supermarket_list.dart';
+import 'package:crud_lista_compras/src/views/home_view.dart';
+import 'package:crud_lista_compras/src/views/item_form_view.dart';
+import 'package:crud_lista_compras/src/views/new_list_view.dart';
+import 'package:crud_lista_compras/src/views/supermarket_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,14 +31,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           //useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.lightBlue,
+            seedColor: ColorsApp.orange,
           ),
         ),
         routes: {
-          AppRoutes.home: (_) => const HomePage(),
-          AppRoutes.newList: (_) => const NewList(),
-          AppRoutes.itemForm: (_) => const ItemForm(),
-          AppRoutes.supermarketList: (_) => const SupermarketList(),
+          AppRoutes.home: (_) => const HomeView(),
+          AppRoutes.newList: (_) => const NewListView(),
+          AppRoutes.itemForm: (_) => const ItemFormView(),
+          AppRoutes.supermarketList: (_) => const SupermarketListView(),
         },
       ),
     );
