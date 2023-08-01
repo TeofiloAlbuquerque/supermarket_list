@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class ColorsApp {
+class AppColors {
   static Color get white => const Color(0XFFFEFEFE); //ffffff
   static Color get greyLight => const Color(0XFFF1F3F5); //f2f2f2
   static Color get grey => const Color(0XFFb3b3b3);

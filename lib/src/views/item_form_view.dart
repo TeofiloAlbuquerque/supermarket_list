@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lista_compras/src/design_system/components/custom_app_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../design_system/colors/colors_app.dart';
 import '../design_system/components/custom_dropdownbutton.dart';
 import '../models/item_model.dart';
 import '../provider/items_provider.dart';
@@ -66,6 +68,7 @@ class _ItemFormViewState extends State<ItemFormView> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+
     final Item? item = ModalRoute.of(context)!.settings.arguments as Item?;
     if (item != null) {
       _loadFormData(item);
@@ -93,35 +96,34 @@ class _ItemFormViewState extends State<ItemFormView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Lista de Compras'),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              // Metodo para ADICIONAR
-              final isValid = _form.currentState!.validate();
-              if (isValid) {
-                _form.currentState!.save();
-                Provider.of<ItemsProvider>(context, listen: false).put(
-                  Item(
-                    id: _formData['id'] ?? '',
-                    name: _formData['name'] ?? '',
-                    quantity: int.parse(_formData['amout'] ?? '0'),
-                    unit: _formData['unit'] ?? 'un',
-                    price: double.parse(_formData['price'] ?? '0.0'),
-                    category: _formData['category'] ?? '',
-                    observation: _formData['observation'],
-                    imageUrl: _formData['imageUrl'] ?? '',
-                  ),
-                );
-                Navigator.of(context).pushNamed(
-                  AppRoutes.supermarketList,
-                );
-              }
-            },
-            icon: const Icon(Icons.save),
-          ),
-        ],
+      appBar: CustomAppBar(
+        titleColor: AppColors.white,
+        background: AppColors.blue,
+        trailing: IconButton(
+          onPressed: () {
+            // Metodo para SALVAR/ADICIONAR
+            final isValid = _form.currentState!.validate();
+            if (isValid) {
+              _form.currentState!.save();
+              Provider.of<ItemsProvider>(context, listen: false).put(
+                Item(
+                  id: _formData['id'] ?? '',
+                  name: _formData['name'] ?? '',
+                  quantity: int.parse(_formData['amout'] ?? '0'),
+                  unit: _formData['unit'] ?? 'un',
+                  price: double.parse(_formData['price'] ?? '0.0'),
+                  category: _formData['category'] ?? '',
+                  observation: _formData['observation'],
+                  imageUrl: _formData['imageUrl'] ?? '',
+                ),
+              );
+              Navigator.of(context).pushNamed(
+                AppRoutes.supermarketList,
+              );
+            }
+          },
+          icon: const Icon(Icons.save),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(

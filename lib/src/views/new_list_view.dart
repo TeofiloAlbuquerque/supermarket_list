@@ -1,16 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:lista_compras/src/design_system/components/custom_text_field.dart';
 import '../design_system/colors/colors_app.dart';
+import '../design_system/components/custom_app_bar.dart';
 import '../routes/app_routes.dart';
 
-class NewListView extends StatelessWidget {
+class NewListView extends StatefulWidget {
   const NewListView({super.key});
+
+  @override
+  State<NewListView> createState() => _NewListViewState();
+}
+
+class _NewListViewState extends State<NewListView> {
+  final TextEditingController _newListFieldController = TextEditingController();
+  String newListTitle = 'Nova lista';
+
+  @override
+  void dispose() {
+    _newListFieldController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: CustomAppBar(
+        background: AppColors.white,
         elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: AppColors.blue,
+        ),
       ),
       body: Center(
         child: Column(
@@ -18,10 +41,11 @@ class NewListView extends StatelessWidget {
           children: <Widget>[
             CustomTextField(
               text: 'Nova lista',
-              colorBorder: ColorsApp.grey,
-              colorLabel: ColorsApp.grey,
-              colorFill: ColorsApp.greyLight,
+              colorBorder: AppColors.grey,
+              colorLabel: AppColors.grey,
+              colorFill: AppColors.greyLight,
               keyboardType: TextInputType.name,
+              controller: _newListFieldController,
             ),
             const Padding(
               padding: EdgeInsets.only(
@@ -36,20 +60,23 @@ class NewListView extends StatelessWidget {
             ),
             CustomTextField(
               text: 'Limite de gastos (Opcional)',
-              colorBorder: ColorsApp.grey,
-              colorLabel: ColorsApp.grey,
-              colorFill: ColorsApp.greyLight,
+              colorBorder: AppColors.grey,
+              colorLabel: AppColors.grey,
+              colorFill: AppColors.greyLight,
               keyboardType: TextInputType.number,
             ),
             const SizedBox(
               height: 20,
             ),
+            //const Spacer(),
             SizedBox(
               width: 350,
               child: ElevatedButton(
                 onPressed: () {
+                  newListTitle = _newListFieldController.text;
                   Navigator.of(context).pushNamed(
-                    AppRoutes.itemForm,
+                    AppRoutes.needBuy,
+                    arguments: newListTitle,
                   );
                 },
                 style: ElevatedButton.styleFrom(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lista_compras/src/design_system/components/custom_app_bar.dart';
+import 'package:lista_compras/src/design_system/components/custom_drawer.dart';
 import '../design_system/colors/colors_app.dart';
 import '../design_system/components/custom_card.dart';
 import '../models/card_model.dart';
@@ -14,31 +15,41 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final List<CardModel> cardList = [
-    CardModel(titleCard: 'Julho', quantityProducts: 6, priceProductList: 95.55),
     CardModel(
-        titleCard: 'Agosto', quantityProducts: 10, priceProductList: 126.83),
+        titleCard: 'Evento GDG',
+        quantityProducts: 26,
+        priceProductList: 1465.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Agosto', quantityProducts: 32, priceProductList: 495.55),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Julho', quantityProducts: 28, priceProductList: 426.83),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Viagem Viçosa',
+        quantityProducts: 16,
+        priceProductList: 285.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Junho', quantityProducts: 29, priceProductList: 436.65),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Maio', quantityProducts: 30, priceProductList: 456.83),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Abril', quantityProducts: 33, priceProductList: 476.83),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Aniversario da Bia',
+        quantityProducts: 17,
+        priceProductList: 582.10),
+    CardModel(titleCard: 'Março', quantityProducts: 3, priceProductList: 85.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Material Escolar',
+        quantityProducts: 3,
+        priceProductList: 85.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Viagem Salvador',
+        quantityProducts: 3,
+        priceProductList: 85.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Fevereiro', quantityProducts: 3, priceProductList: 85.10),
     CardModel(
-        titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
+        titleCard: 'Janeiro', quantityProducts: 3, priceProductList: 85.10),
     CardModel(
         titleCard: 'Setembro', quantityProducts: 3, priceProductList: 85.10),
     CardModel(
@@ -51,39 +62,12 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsApp.greyLight,
+      backgroundColor: AppColors.greyLight,
       appBar: CustomAppBar(
         title: 'Minhas listas',
-        background: ColorsApp.blue,
+        background: AppColors.blue,
       ),
-      // appBar: AppBar(
-      //   title: const Text('Minhas listas'),
-      // ),
-      drawer: Drawer(
-        backgroundColor: Colors.black,
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: ColorsApp.blue,
-              ),
-              child: const Text('Drawer Header'),
-            ),
-            ListTile(
-              title: Text(
-                'Item 2',
-                style: TextStyle(
-                  color: ColorsApp.white,
-                ),
-              ),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
-      // NavigationDrawer(
-      //   children: [],
-      // ),
+      drawer: const CustomDrawer(),
       body: Stack(
         children: <Widget>[
           Expanded(

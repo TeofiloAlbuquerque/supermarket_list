@@ -17,7 +17,7 @@ class CustomCard extends StatelessWidget {
       },
       child: Card(
         elevation: 4.0,
-        color: ColorsApp.white,
+        color: AppColors.white,
         child: ListTile(
           title: Text(cardData.titleCard),
           subtitle: Row(

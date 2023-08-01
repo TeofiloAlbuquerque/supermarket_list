@@ -6,6 +6,7 @@ class CustomTextField extends StatelessWidget {
   final Color colorLabel;
   final Color colorFill;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
   const CustomTextField({
     super.key,
     required this.text,
@@ -13,6 +14,7 @@ class CustomTextField extends StatelessWidget {
     required this.colorLabel,
     required this.colorFill,
     required this.keyboardType,
+    this.controller,
   });
 
   @override

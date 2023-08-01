@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_compras/src/views/need_buy_view.dart';
 import 'package:provider/provider.dart';
 
 import 'src/design_system/colors/colors_app.dart';
@@ -31,11 +32,12 @@ class MyApp extends StatelessWidget {
         title: 'Lista de compras',
         theme: ThemeData(
           //useMaterial3: true,
-          primaryColor: ColorsApp.beige,
+          primaryColor: AppColors.blue,
         ),
         routes: {
           AppRoutes.home: (_) => const HomeView(),
           AppRoutes.newList: (_) => const NewListView(),
+          AppRoutes.needBuy: (_) => const NeedBuyView(),
           AppRoutes.itemForm: (_) => const ItemFormView(),
           AppRoutes.supermarketList: (_) => const SupermarketListView(),
         },
