@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lista_compras/src/design_system/components/custom_app_bar.dart';
 import 'package:lista_compras/src/design_system/components/custom_drawer.dart';
+import 'package:lista_compras/src/design_system/components/custom_elevated_button.dart';
 import '../design_system/colors/colors_app.dart';
 import '../design_system/components/custom_card.dart';
 import '../models/card_model.dart';
@@ -86,29 +87,25 @@ class _HomeViewState extends State<HomeView> {
               },
             ),
           ),
-          Align(
-            alignment: Alignment.bottomRight,
+          Positioned(
+            bottom: 0,
+            right: 12,
             child: Padding(
               padding: const EdgeInsets.only(
                 bottom: 40,
                 right: 25,
               ),
-              child: SizedBox(
-                height: 45,
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(
-                      AppRoutes.newList,
-                    );
-                  },
-                  icon: const Icon(Icons.add),
-                  label: const Text('Nova lista'),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
+              child: CustomElevatedButton(
+                icon: const Icon(Icons.add),
+                label: const Text('Nova lista'),
+                backgroundColor: AppColors.blue,
+                iconColor: AppColors.white,
+                textColor: AppColors.white,
+                onPressed: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.newList,
+                  );
+                },
               ),
             ),
           )
