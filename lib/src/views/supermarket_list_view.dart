@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../design_system/components/item_tile.dart';
+import '../design_system/widgets/item_tile.dart';
 import '../provider/items_provider.dart';
 
 class SupermarketListView extends StatelessWidget {

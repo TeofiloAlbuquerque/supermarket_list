@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_compras/src/provider/text_field_provider.dart';
 import 'package:lista_compras/src/views/need_buy_view.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
           // implementa o padrão Observer, no qual o Provider vai se basear para
           // notificar os items quando houver alguma mudança.
           create: (ctx) => ItemsProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => TextFieldProvider(),
         ),
       ],
       child: MaterialApp(

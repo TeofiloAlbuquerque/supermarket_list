@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lista_compras/src/design_system/components/custom_app_bar.dart';
-import 'package:lista_compras/src/design_system/components/custom_drawer.dart';
-import 'package:lista_compras/src/design_system/components/custom_elevated_button.dart';
+import 'package:lista_compras/src/design_system/widgets/custom_app_bar.dart';
+import 'package:lista_compras/src/design_system/widgets/custom_drawer.dart';
+import 'package:lista_compras/src/design_system/widgets/custom_elevated_button.dart';
 import '../design_system/colors/colors_app.dart';
-import '../design_system/components/custom_card.dart';
+import '../design_system/widgets/custom_card.dart';
 import '../models/card_model.dart';
 import '../routes/app_routes.dart';
 

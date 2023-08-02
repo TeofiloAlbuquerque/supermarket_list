@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lista_compras/src/design_system/components/custom_text_field.dart';
+import 'package:lista_compras/src/design_system/widgets/custom_text_field.dart';
+import 'package:lista_compras/src/provider/text_field_provider.dart';
+import 'package:provider/provider.dart';
 import '../design_system/colors/colors_app.dart';
-import '../design_system/components/custom_app_bar.dart';
+import '../design_system/widgets/custom_app_bar.dart';
 import '../routes/app_routes.dart';
 
 class NewListView extends StatefulWidget {
@@ -12,12 +14,12 @@ class NewListView extends StatefulWidget {
 }
 
 class _NewListViewState extends State<NewListView> {
-  final TextEditingController _newListFieldController = TextEditingController();
-  String newListTitle = 'Nova lista';
+  final TextEditingController _textFieldController = TextEditingController();
+  //String newListTitle = 'Nova lista';
 
   @override
   void dispose() {
-    _newListFieldController.dispose();
+    _textFieldController.dispose();
     super.dispose();
   }
 
@@ -45,7 +47,7 @@ class _NewListViewState extends State<NewListView> {
               colorLabel: AppColors.grey,
               colorFill: AppColors.greyLight,
               keyboardType: TextInputType.name,
-              controller: _newListFieldController,
+              controller: _textFieldController,
             ),
             const Padding(
               padding: EdgeInsets.only(
@@ -73,10 +75,12 @@ class _NewListViewState extends State<NewListView> {
               width: 350,
               child: ElevatedButton(
                 onPressed: () {
-                  newListTitle = _newListFieldController.text;
+                  String textFieldValue = _textFieldController.text;
+                  Provider.of<TextFieldProvider>(context, listen: false)
+                      .setTextFieldValue(textFieldValue);
                   Navigator.of(context).pushNamed(
                     AppRoutes.needBuy,
-                    arguments: newListTitle,
+                    arguments: textFieldValue,
                   );
                 },
                 style: ElevatedButton.styleFrom(

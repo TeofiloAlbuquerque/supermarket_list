@@ -5,7 +5,7 @@ import '../models/item_model.dart';
 // Pesquisar sobre o padrão OBSERVER (Importante)
 // Iremos utilizar o Provider para controlar o map de Itens
 // "with", Mixin
-class ItemsProvider with ChangeNotifier {
+class ItemsProvider extends ChangeNotifier {
   final Map<String, Item> _items = {...dummyItems};
   // get para retornar todos os Usuarios da lista
   List<Item> get all {
