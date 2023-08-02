@@ -11,12 +11,17 @@ class NeedBuyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String textFieldValue =
-        Provider.of<TextFieldProvider>(context).textFieldValue;
+    // final String textFieldValue =
+    //     Provider.of<TextFieldProvider>(context).textFieldValue;
     return Scaffold(
       appBar: CustomAppBar(
         background: AppColors.blue,
-        title: textFieldValue,
+        titleProvider: Consumer<TextFieldProvider>(
+          builder: (context, textFieldProvider, child) {
+            return Text(textFieldProvider.textFieldValue);
+          },
+        ),
+        // title: textFieldValue,
         titleColor: AppColors.white,
       ),
       body: const Center(
@@ -30,7 +35,7 @@ class NeedBuyView extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Text('Adicionar'),
+        child: const Icon(Icons.add),
       ),
     );
   }

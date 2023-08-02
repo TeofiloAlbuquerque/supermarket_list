@@ -65,7 +65,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: AppColors.greyLight,
       appBar: CustomAppBar(
-        title: 'Minhas listas',
+        titleCallback: () => 'Minhas listas',
         background: AppColors.blue,
       ),
       drawer: const CustomDrawer(),

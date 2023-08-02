@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFieldProvider extends ChangeNotifier {
-  String _textFieldValue = 'Title';
+  String _textFieldValue = '';
 
   String get textFieldValue => _textFieldValue;
 

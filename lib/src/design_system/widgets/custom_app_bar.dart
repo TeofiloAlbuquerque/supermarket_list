@@ -1,9 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:lista_compras/src/design_system/colors/colors_app.dart';
+import 'package:provider/provider.dart';
+import '../../provider/text_field_provider.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String? title;
+  final String Function()? titleCallback;
+  final Consumer<TextFieldProvider>? titleProvider;
   final double? elevation;
   final Color background;
   final Widget? leading;
@@ -11,12 +14,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? titleColor;
   const CustomAppBar({
     Key? key,
-    this.title,
+    this.titleCallback,
     this.elevation,
     required this.background,
     this.leading,
     this.trailing,
     this.titleColor,
+    this.titleProvider,
   }) : super(key: key);
 
   @override
@@ -28,11 +32,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         trailing ?? const SizedBox(),
       ],
       elevation: elevation,
-      title: Text(
-        title ?? 'Title',
-        style: TextStyle(
-          color: titleColor ?? AppColors.white,
-        ),
+      title: Consumer<TextFieldProvider>(
+        builder: (context, textFieldProvider, child) {
+          final String title =
+              titleCallback?.call() ?? textFieldProvider.textFieldValue;
+          return Text(
+            title,
+            style: TextStyle(
+              color: titleColor ?? AppColors.white,
+            ),
+          );
+        },
       ),
     );
   }
