@@ -15,7 +15,6 @@ class NewListView extends StatefulWidget {
 
 class _NewListViewState extends State<NewListView> {
   final TextEditingController _textFieldController = TextEditingController();
-  //String newListTitle = 'Nova lista';
 
   @override
   void dispose() {

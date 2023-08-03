@@ -22,6 +22,7 @@ class CustomTextField extends StatelessWidget {
     return SizedBox(
       width: 360,
       child: TextField(
+        controller: controller,
         keyboardType: keyboardType,
         decoration: InputDecoration(
           border: OutlineInputBorder(

@@ -21,7 +21,6 @@ class NeedBuyView extends StatelessWidget {
             return Text(textFieldProvider.textFieldValue);
           },
         ),
-        // title: textFieldValue,
         titleColor: AppColors.white,
       ),
       body: const Center(
