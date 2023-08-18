@@ -1,0 +1,36 @@
+{
+  "products": {
+    "fruits": {
+      "product1": {
+        "name": "Maça"
+      },
+      "product2": {
+        "name": "Banana"
+      }
+    },
+    "dairy": {
+      "product3": {
+        "name": "Leite"
+      },
+      "product4": {
+        "name": "Queijo"
+      }
+    },
+    "meat": {
+      "product5": {
+        "name": "Frango"
+      },
+      "product6": {
+        "name": "Carne bovina"
+      }
+    },
+    "cleaning": {
+      "product7": {
+        "name": "Sabão em pó"
+      },
+      "product8": {
+        "name": "Desinfetante"   
+      }
+    }
+  }
+}

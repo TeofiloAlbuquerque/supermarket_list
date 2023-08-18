@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "502000371300",
+    "project_id": "supermarket-list-c0bea",
+    "storage_bucket": "supermarket-list-c0bea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502000371300:android:08d21f1bd0fb6467728171",
+        "android_client_info": {
+          "package_name": "br.com.theosantosdev.crud_lista_compras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502000371300-p5c5q4rfnavp44pk6tvembtme7pgeseh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJ0X-cjB8gCralF1emJ9s05q9eIoSFl_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502000371300-p5c5q4rfnavp44pk6tvembtme7pgeseh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

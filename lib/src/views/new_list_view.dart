@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_compras/src/design_system/widgets/button_list.dart';
 import 'package:lista_compras/src/design_system/widgets/custom_text_field.dart';
 import 'package:lista_compras/src/provider/text_field_provider.dart';
 import 'package:provider/provider.dart';
@@ -55,6 +56,11 @@ class _NewListViewState extends State<NewListView> {
                 bottom: 10,
               ),
               child: Text('Sugestões'),
+            ),
+            SizedBox(
+              height: 50,
+              width: 350,
+              child: ButtonList(),
             ),
             const SizedBox(
               height: 20,

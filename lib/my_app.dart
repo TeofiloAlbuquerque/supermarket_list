@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lista_compras/src/provider/text_field_provider.dart';
 import 'package:lista_compras/src/views/need_buy_view.dart';
+import 'package:lista_compras/src/views/supermarket_list_view.dart';
 import 'package:provider/provider.dart';
 
 import 'src/design_system/colors/colors_app.dart';
@@ -9,7 +10,7 @@ import 'src/routes/app_routes.dart';
 import 'src/views/home_view.dart';
 import 'src/views/item_form_view.dart';
 import 'src/views/new_list_view.dart';
-import 'src/views/supermarket_list_view.dart';
+import 'src/views/feedback_products_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.newList: (_) => const NewListView(),
           AppRoutes.needBuy: (_) => const NeedBuyView(),
           AppRoutes.itemForm: (_) => const ItemFormView(),
-          AppRoutes.supermarketList: (_) => const SupermarketListView(),
+          AppRoutes.feedbackProducts: (_) => const FeedbackProductsView(),
+          AppRoutes.supermarketList: (_) => SupermarketListView(),
         },
       ),
     );

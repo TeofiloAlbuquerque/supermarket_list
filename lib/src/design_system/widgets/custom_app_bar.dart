@@ -37,7 +37,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           final String title =
               titleCallback?.call() ?? textFieldProvider.textFieldValue;
           return Text(
-            title,
+            title.isNotEmpty
+                ? title
+                : titleCallback != null
+                    ? titleCallback!()
+                    : 'Nova lista',
             style: TextStyle(
               color: titleColor ?? AppColors.white,
             ),
