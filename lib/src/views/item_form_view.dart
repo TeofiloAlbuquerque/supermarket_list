@@ -61,7 +61,7 @@ class _ItemFormViewState extends State<ItemFormView> {
     _formData['price'] = item.price.toString();
     _formData['category'] = item.category;
     _formData['observation'] = item.observation ?? '';
-    _formData['imageUrl'] = item.imageUrl;
+  //  _formData['imageUrl'] = item.imageUrl ?? '';
   }
 
   // persistencia de dados
@@ -114,7 +114,7 @@ class _ItemFormViewState extends State<ItemFormView> {
                   price: double.parse(_formData['price'] ?? '0.0'),
                   category: _formData['category'] ?? '',
                   observation: _formData['observation'],
-                  imageUrl: _formData['imageUrl'] ?? '',
+ //                 imageUrl: _formData['imageUrl'] ?? '',
                 ),
               );
               Navigator.of(context).pushNamed(

@@ -7,7 +7,7 @@ class Item {
   final String category;
   //final bool addCart;
   final String? observation;
-  final String imageUrl;
+  //final String imageUrl;
 
   const Item({
     required this.id,
@@ -18,6 +18,6 @@ class Item {
     required this.category,
     // required this.addCart,
     this.observation,
-    required this.imageUrl,
+   // required this.imageUrl,
   });
 }

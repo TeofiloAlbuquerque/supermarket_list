@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         title: 'Lista de compras',
         theme: ThemeData(
           //useMaterial3: true,
+          //primarySwatch: ,
           primaryColor: AppColors.blue,
         ),
         routes: {
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.needBuy: (_) => const NeedBuyView(),
           AppRoutes.itemForm: (_) => const ItemFormView(),
           AppRoutes.feedbackProducts: (_) => const FeedbackProductsView(),
-          AppRoutes.supermarketList: (_) => SupermarketListView(),
+          AppRoutes.supermarketList: (_) => const SupermarketListView(),
         },
       ),
     );

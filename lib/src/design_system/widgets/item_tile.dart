@@ -14,15 +14,15 @@ class ItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     // Se não for inserido uma imageUrl, irá colocar por padrão, um icone
     // personalizado
-    final avatar = item.imageUrl.isEmpty
-        ? const CircleAvatar(
-            child: Icon(Icons.person),
-          )
-        : CircleAvatar(
-            backgroundImage: NetworkImage(item.imageUrl),
-          );
+    // final avatar = item.imageUrl.isEmpty
+    //     ? const CircleAvatar(
+    //         child: Icon(Icons.person),
+    //       )
+    //     : CircleAvatar(
+    //         backgroundImage: NetworkImage(item.imageUrl),
+    //       );
     return ListTile(
-      leading: avatar,
+      //leading: avatar,
       title: Text(item.name),
       subtitle: Text('${item.quantity} ${item.unit} = ${item.price}'),
       trailing: SizedBox(

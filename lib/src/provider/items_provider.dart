@@ -42,7 +42,7 @@ class ItemsProvider extends ChangeNotifier {
           price: item.price,
           category: item.category,
           // observation: item.observation,
-          imageUrl: item.imageUrl,
+ //         imageUrl: item.imageUrl,
         ),
       );
     } else {
@@ -66,7 +66,7 @@ class ItemsProvider extends ChangeNotifier {
           price: item.price,
           category: item.category,
           //  observation: item.observation,
-          imageUrl: item.imageUrl,
+//          imageUrl: item.imageUrl,
         ),
       );
     }
