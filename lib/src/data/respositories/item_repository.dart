@@ -1,4 +1,4 @@
-import 'package:lista_compras/src/models/item_model.dart';
+import 'package:lista_compras/src/domain/models/item_model.dart';
 
 class ItemRepository {
   static List<Item> listItens = [

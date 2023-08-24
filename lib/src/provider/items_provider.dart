@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/dummy_items.dart';
-import '../models/item_model.dart';
+import '../domain/models/item_model.dart';
 
 // Pesquisar sobre o padrão OBSERVER (Importante)
 // Iremos utilizar o Provider para controlar o map de Itens

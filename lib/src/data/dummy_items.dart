@@ -1,4 +1,4 @@
-import '../models/item_model.dart';
+import '../domain/models/item_model.dart';
 
 // Dados mockados
 const dummyItems = {

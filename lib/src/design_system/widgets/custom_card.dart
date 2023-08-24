@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../models/card_model.dart';
+import '../../domain/models/card_model.dart';
 import '../../routes/app_routes.dart';
 import '../colors/colors_app.dart';
 

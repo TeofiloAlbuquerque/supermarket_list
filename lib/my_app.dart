@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.needBuy: (_) => const NeedBuyView(),
           AppRoutes.itemForm: (_) => const ItemFormView(),
           AppRoutes.feedbackProducts: (_) => const FeedbackProductsView(),
-          AppRoutes.supermarketList: (_) => const SupermarketListView(),
+          AppRoutes.supermarketList: (_) =>  SupermarketListView(),
         },
       ),
     );

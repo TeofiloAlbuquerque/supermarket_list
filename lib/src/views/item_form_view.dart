@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../design_system/colors/colors_app.dart';
 import '../design_system/widgets/custom_dropdownbutton.dart';
-import '../models/item_model.dart';
+import '../domain/models/item_model.dart';
 import '../provider/items_provider.dart';
 import '../routes/app_routes.dart';
 
